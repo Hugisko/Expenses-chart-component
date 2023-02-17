@@ -1,0 +1,258 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    font-family: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--Cream);
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+}
+
+main {
+    margin-top: auto;
+    padding: 1rem;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Soft-red);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.left-balance {
+    color: var(--Very-pale-orange);
+}
+
+.my-balance {
+    font-size: .9375rem;
+}
+
+.price-balance {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo {
+    width: 60px;
+    margin-right: .5rem;
+}
+
+.container {
+    background-color: var(--Very-pale-orange);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.container > h1 {
+    font-size: 1.4rem;
+    color: var(--Dark-brown);
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: .8rem;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid hsla(28, 10%, 53%, 0.274);
+}
+
+.column-area {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.price {
+    opacity: 0;
+    font-size: .7rem;
+    padding: .25rem;
+    color: var(--Very-pale-orange);
+    background-color: black;
+    border-radius: 3px;
+}
+
+.bar {
+    width: 100%;
+    background-color: var(--Soft-red);
+    border-radius: 3px;
+}
+
+.current {
+    background-color: var(--Cyan);
+}
+
+.day {
+    font-size: .72rem;
+    color: var(--Medium-brown);
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.total {
+    color: var(--Medium-brown);
+    font-size: .86rem;
+}
+
+.cost {
+    color: var(--Dark-brown);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1rem;
+}
+
+.percentage {
+    color: var(--Dark-brown);
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.last{
+    color: var(--Medium-brown);
+    font-size: .85rem;
+}
+
+.column-area:is(:hover,:focus) > .bar{
+    opacity: .5;
+    transition: .5s ease-in-out;
+}
+
+.column-area:is(:hover,:focus) > .price{
+    opacity: 1;
+    transition: .8s ease-in-out;
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media (min-width: 500px) {
+
+    main {
+        padding: 0;
+    }
+
+    .balance {
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .my-balance {
+        font-size: inherit;
+    }
+
+    .price-balance {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        margin-right: .3rem;
+    }
+
+    .container {
+        width: 450px;
+        border-radius: 15px;
+        padding: 1.5rem 2rem;
+    }
+
+    .container > h1 {
+        font-size: 1.7rem;
+    }
+
+    .chart {
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .column-area {
+        flex-grow: 1;
+    }
+
+    .price {
+        padding: .5rem;
+        font-size: .9375rem;
+    }
+
+    .day {
+        font-size: .9rem;
+    }
+
+    .bottom-container {
+        padding-top: 1.5rem;
+    }
+
+    .total {
+        font-size: .9375rem;
+    }
+
+    .cost {
+        font-size: 2.3rem;
+    }
+}
